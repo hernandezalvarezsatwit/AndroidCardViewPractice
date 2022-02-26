@@ -4,13 +4,11 @@ public class ListElement {
     private String color;
     private String name;
     private String city;
-    private String status;
 
-    public ListElement(String color, String name, String city, String status) {
+    public ListElement(String color, String name, String city) {
         this.color = color;
         this.name = name;
         this.city = city;
-        this.status = status;
     }
 
     public String getColor() {
@@ -25,7 +23,4 @@ public class ListElement {
         return city;
     }
 
-    public String getStatus() {
-        return status;
-    }
 }

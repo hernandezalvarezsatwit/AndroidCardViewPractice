@@ -2,12 +2,10 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:animateLayoutChanges="true"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -21,6 +19,7 @@
             android:orientation="horizontal"
             android:padding="6dp">
 
+            <!--Image View Space-->
             <ImageView
                 android:id="@+id/iconImageView"
                 android:layout_width="70dp"
@@ -31,7 +30,9 @@
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
                 app:srcCompat="@drawable/ic_baseline_contacts_24"
-                android:layout_alignParentLeft="true"/>
+                />
+
+            <!--Layout for Name and City-->
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"

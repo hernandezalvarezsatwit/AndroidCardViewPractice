@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<ListElement> list = new ArrayList<>();
         for(int i = 0; i < 12; i++)
-            list.add(new ListElement("#775447" , "Pedro", "Mexico", "Activo"));
+            list.add(new ListElement("#775447" , "Pedro", "Mexico"));
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         ListAdapter adapter = new ListAdapter(list, this);
