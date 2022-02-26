@@ -37,9 +37,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         ViewHolder(View itemView){
             super(itemView);
-            iconImage = itemView.findViewById(R.id.iconImageView);
-            name = itemView.findViewById(R.id.nameTextView);
-            city = itemView.findViewById(R.id.cityTextView);
+            iconImage = itemView.findViewById(R.id.image);
+            name = itemView.findViewById(R.id.titleView);
+            city = itemView.findViewById(R.id.descriptionView);
         }
 
         void bindData(final ListElement item){
