@@ -1,7 +1,6 @@
 package edu.wit.mobileapp.cardview;
 import android.graphics.Bitmap;
 
-
 /**
  * This object represents each individual card
  * @author Samuel Hernandez

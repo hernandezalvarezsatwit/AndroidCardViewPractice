@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Create list and populate it
         String description = "This is just a placeholder for an actual description";
-        List<Card> cards = IntStream.range(1, 12).mapToObj(i ->
+        List<Card> cards = IntStream.range(1, 101).mapToObj(i ->
                 new Card(defaultImage, "Title "+i, description)).collect(Collectors.toList());
 
         //Create manager, adapter, pass the list of cards
