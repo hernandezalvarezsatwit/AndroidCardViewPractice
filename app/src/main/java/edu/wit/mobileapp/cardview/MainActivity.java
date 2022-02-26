@@ -9,30 +9,19 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<ListElement> elements;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        init();
+        List<ListElement> list = new ArrayList<>();
+        for(int i = 0; i < 12; i++)
+            list.add(new ListElement("#775447" , "Pedro", "Mexico", "Activo"));
+
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        ListAdapter adapter = new ListAdapter(list, this);
+        RecyclerView recyclerView = findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setAdapter(adapter);
     }
-
-    public void init(){
-        elements = new ArrayList<>();
-        elements.add(new ListElement("#775447" , "Pedro", "Mexico", "Activo"));
-        elements.add(new ListElement("#607832" , "Alex", "Tabasco", "Activo"));
-        elements.add(new ListElement("#03af32" , "Denis", "Puebla", "Cancelado"));
-        elements.add(new ListElement("#034222" , "Armando", "Yucatan", "Activo"));
-        elements.add(new ListElement("#834222" , "Luis", "Tlaxcala", "Activo"));
-
-        ListAdapter listAdapter = new ListAdapter(elements, this);
-        RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(listAdapter);
-
-    }
-
 }
