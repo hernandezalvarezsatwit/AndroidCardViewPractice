@@ -6,6 +6,7 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp"
     app:cardUseCompatPadding="true">
+    <!--CardView Settings-->
 
     <!--Horizontal linear layout for whole card-->
     <LinearLayout
@@ -15,14 +16,13 @@
 
         <!--Image View Space-->
         <ImageView
-            android:id="@+id/image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/imageView"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            app:srcCompat="@drawable/ic_baseline_contacts_24" />
+            android:paddingRight="16dp" />
 
-        <!--Linear layout for title and description-->
+        <!--Linear vertical layout for title and description-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 android:id="@+id/titleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:paddingTop="7dp"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -43,7 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Description"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingRight="16dp"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
