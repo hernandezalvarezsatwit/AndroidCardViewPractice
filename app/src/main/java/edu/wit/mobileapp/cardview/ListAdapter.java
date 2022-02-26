@@ -12,28 +12,17 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    private List<ListElement> mData;
-    private LayoutInflater mInflater;
+    private List<ListElement> list;
+    private LayoutInflater inflater;
 
-    public ListAdapter(List<ListElement> itemList, Context context){
-        this.mInflater = LayoutInflater.from(context);
-        this.mData = itemList;
-    }
-
-    public int getItemCount(){ return mData.size();}
-
-    public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = mInflater.inflate(R.layout.list_element, null);
-        return new ListAdapter.ViewHolder(view);
-    }
-
-    public void onBindViewHolder(final ListAdapter.ViewHolder holder, final int position){
-        holder.bindData(mData.get(position));
+    public ListAdapter(List<ListElement> itemsList, Context context){
+        inflater = LayoutInflater.from(context);
+        list = itemsList;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView iconImage;
-        TextView name, city, status;
+        TextView name, city;
 
         ViewHolder(View itemView){
             super(itemView);
@@ -42,10 +31,23 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             city = itemView.findViewById(R.id.descriptionView);
         }
 
-        void bindData(final ListElement item){
+        void bindData(ListElement item){
             iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
             name.setText(item.getName());
             city.setText(item.getCity());
         }
+    }
+
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        View view = inflater.inflate(R.layout.list_element, null);
+        return new ViewHolder(view);
+    }
+
+    public void onBindViewHolder(ListAdapter.ViewHolder holder, int position){
+        holder.bindData(list.get(position));
+    }
+
+    public int getItemCount(){
+        return list.size();
     }
 }
